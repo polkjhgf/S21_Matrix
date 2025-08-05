@@ -86,7 +86,7 @@ int s21_mult_matrix(matrix_t *A, matrix_t *B, matrix_t *result) {
   if (A == NULL || B == NULL || result == NULL || A->matrix == NULL ||
       B->matrix == NULL || A->rows <= 0 || A->columns <= 0 || B->rows <= 0 ||
       B->columns <= 0) {
-    return INCORRECT_MATRIX; // 1 или 2 в зависимости от проекта
+    return INCORRECT_MATRIX;  // 1 или 2 в зависимости от проекта
   }
 
   if (A->columns != B->rows) {

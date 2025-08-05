@@ -112,7 +112,7 @@ START_TEST(test_copy_success) {
 }
 END_TEST
 
-Suite *copy_matrix_suite() {
+Suite *suite_copy_matrix() {
   Suite *s;
   TCase *tc_core;
 

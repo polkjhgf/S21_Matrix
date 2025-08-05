@@ -12,12 +12,10 @@ START_TEST(test_random_multiplication) {
   s21_create_matrix(a_rows, b_cols, &expected);
 
   for (int i = 0; i < a_rows; i++)
-    for (int j = 0; j < a_cols; j++)
-      A.matrix[i][j] = get_rand(-1e9, 1e9);
+    for (int j = 0; j < a_cols; j++) A.matrix[i][j] = get_rand(-1e9, 1e9);
 
   for (int i = 0; i < b_rows; i++)
-    for (int j = 0; j < b_cols; j++)
-      B.matrix[i][j] = get_rand(-1e9, 1e9);
+    for (int j = 0; j < b_cols; j++) B.matrix[i][j] = get_rand(-1e9, 1e9);
 
   for (int i = 0; i < a_rows; i++)
     for (int j = 0; j < b_cols; j++)
@@ -45,16 +43,13 @@ START_TEST(test_predefined_multiplication) {
   double valsR[2][2] = {{58, 64}, {139, 154}};
 
   for (int i = 0; i < 2; i++)
-    for (int j = 0; j < 3; j++)
-      A.matrix[i][j] = valsA[i][j];
+    for (int j = 0; j < 3; j++) A.matrix[i][j] = valsA[i][j];
 
   for (int i = 0; i < 3; i++)
-    for (int j = 0; j < 2; j++)
-      B.matrix[i][j] = valsB[i][j];
+    for (int j = 0; j < 2; j++) B.matrix[i][j] = valsB[i][j];
 
   for (int i = 0; i < 2; i++)
-    for (int j = 0; j < 2; j++)
-      expected.matrix[i][j] = valsR[i][j];
+    for (int j = 0; j < 2; j++) expected.matrix[i][j] = valsR[i][j];
 
   ck_assert_int_eq(s21_mult_matrix(&A, &B, &result), OK);
   ck_assert_int_eq(s21_eq_matrix(&result, &expected), SUCCESS);

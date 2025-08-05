@@ -41,8 +41,7 @@ int s21_copy_matrix(matrix_t *A, matrix_t *B) {
     return INCORRECT_MATRIX;
   if (A->rows < 1 || A->columns < 1 || B->rows < 1 || B->columns < 1)
     return INCORRECT_MATRIX;
-  if (B->rows != A->rows || B->columns != A->columns)
-    return ERROR_CALC;
+  if (B->rows != A->rows || B->columns != A->columns) return ERROR_CALC;
 
   for (int i = 0; i < A->rows; i++) {
     for (int j = 0; j < A->columns; j++) {

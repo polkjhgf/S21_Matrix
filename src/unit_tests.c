@@ -4,41 +4,33 @@
 #include "s21_matrix.h"
 #include "tests/s21_matrix_test.h"
 
-void run_tests(){
-    Suite *suite = NULL;
-    SRunner *sRunner = NULL;
+void run_tests() {
+  Suite *suite = NULL;
+  SRunner *sRunner = NULL;
 
-    Suite *all_suite[] = {
-        suite_create_matrix(),
-        suite_transpose_matrix(),
-        suite_eq_matrix(),
-        suite_sum_matrix(),
-        suite_sub_matrix(),
-        suite_mult_matrix(),
-        suite_mult_number_matrix(),
-        suite_calc_complements(),
-        suite_determinant(),
-        copy_matrix_suite()
-        //suite_inverse_matrix()
-    };
+  Suite *all_suite[] = {
+      suite_create_matrix(),      suite_transpose_matrix(), suite_eq_matrix(),
+      suite_sum_matrix(),         suite_sub_matrix(),       suite_mult_matrix(),
+      suite_mult_number_matrix(), suite_calc_complements(), suite_determinant(),
+      suite_copy_matrix(),        suite_inverse_matrix()};
 
-    int count_of_tests = sizeof(all_suite) / sizeof(Suite *);
-    for(int i = 0; i < count_of_tests; ++i){
-        suite = all_suite[i];
-        sRunner = srunner_create(suite);
-        srunner_set_fork_status(sRunner, CK_NOFORK);
+  int count_of_tests = sizeof(all_suite) / sizeof(Suite *);
+  for (int i = 0; i < count_of_tests; ++i) {
+    suite = all_suite[i];
+    sRunner = srunner_create(suite);
+    srunner_set_fork_status(sRunner, CK_NOFORK);
 
-        srunner_run_all(sRunner, CK_NORMAL);
-        srunner_free(sRunner);
+    srunner_run_all(sRunner, CK_NORMAL);
+    srunner_free(sRunner);
 
-        suite = NULL;
-        sRunner = NULL;
-    }
+    suite = NULL;
+    sRunner = NULL;
+  }
 }
 
-double get_rand(double min, double max){
-    double val = (double)rand() / RAND_MAX;
-    return min + val * (max - min);
+double get_rand(double min, double max) {
+  double val = (double)rand() / RAND_MAX;
+  return min + val * (max - min);
 }
 
 int main() { run_tests(); }

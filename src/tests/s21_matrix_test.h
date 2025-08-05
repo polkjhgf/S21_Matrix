@@ -16,7 +16,7 @@ Suite *suite_mult_matrix();
 Suite *suite_mult_number_matrix();
 Suite *suite_calc_complements();
 Suite *suite_determinant();
-Suite *copy_matrix_suite();
+Suite *suite_copy_matrix();
 Suite *suite_inverse_matrix();
 
 double get_rand(double min, double max);

@@ -24,11 +24,9 @@ int s21_calc_complements(matrix_t *A, matrix_t *result) {
       }
 
       for (int k = 0, mi = 0; k < A->rows; k++) {
-        if (k == i)
-          continue;
+        if (k == i) continue;
         for (int l = 0, mj = 0; l < A->columns; l++) {
-          if (l == j)
-            continue;
+          if (l == j) continue;
           minor.matrix[mi][mj] = A->matrix[k][l];
           mj++;
         }

@@ -22,13 +22,11 @@ double recurcive_determinant(matrix_t *A, int n) {
       int A_row = 0;
 
       for (int i = 0; i < n; ++i) {
-        if (i == 0)
-          continue;
+        if (i == 0) continue;
         int A_col = 0;
 
         for (int j = 0; j < n; ++j) {
-          if (j == k)
-            continue;
+          if (j == k) continue;
 
           submatrix.matrix[A_row][A_col] = A->matrix[i][j];
           A_col++;

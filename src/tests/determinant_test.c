@@ -6,8 +6,7 @@ START_TEST(test_det_all_same_columns) {
   s21_create_matrix(n, n, &mat);
 
   for (int i = 0; i < n; i++)
-    for (int j = 0; j < n; j++)
-      mat.matrix[i][j] = j;
+    for (int j = 0; j < n; j++) mat.matrix[i][j] = j;
 
   double result = 0;
   int status = s21_determinant(&mat, &result);
@@ -24,8 +23,7 @@ START_TEST(test_det_linearly_dependent) {
   s21_create_matrix(n, n, &mat);
 
   for (int i = 0; i < n; i++)
-    for (int j = 0; j < n; j++)
-      mat.matrix[i][j] = i + j;
+    for (int j = 0; j < n; j++) mat.matrix[i][j] = i + j;
 
   double result = 0;
   int status = s21_determinant(&mat, &result);

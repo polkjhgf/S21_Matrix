@@ -86,8 +86,7 @@ START_TEST(test_equal_2x2_matrix) {
   s21_create_matrix(2, 2, &b);
   double values[2][2] = {{1, 2}, {3, 4}};
   for (int i = 0; i < 2; ++i)
-    for (int j = 0; j < 2; ++j)
-      a.matrix[i][j] = b.matrix[i][j] = values[i][j];
+    for (int j = 0; j < 2; ++j) a.matrix[i][j] = b.matrix[i][j] = values[i][j];
   ck_assert_int_eq(s21_eq_matrix(&a, &b), SUCCESS);
   s21_remove_matrix(&a);
   s21_remove_matrix(&b);
